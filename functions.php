@@ -1,25 +1,21 @@
 <?php
-	function nameLengthIsValide ($nameToValid) {
+	function nameLengthIsValid($nameToValid){
+		//minimum 2 max 10
 		$length = strlen($nameToValid);
-		
-		$response = [
-			'isValide' => true,
-			'msg' => ''
+		$responses=['isValid'=>true,
+		'msg'=>''
 		];
-	
-		if ($length < 2) {
-			$response = [
-				'isValide' => false,
-				'msg' => 'nom trop court'
-			];
-		} elseif ($length > 10) {
-			$response = [
-				'isValide' => false,
-				'msg' => 'nom trop long'
-			];
+		if ($length <2) {
+			$responses=['isValid'=>false,
+			'msg'=>'Nom trop court'
+		];
 		}
-	
-		return $response;
-	}
+		else if ($length >10) {
+			$responses=['isValid'=>false,
+			'msg'=>'Nom trop long'
+		];
+		}
+		return $responses;
 
+	}
 ?>
